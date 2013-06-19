@@ -19,7 +19,7 @@ This post records my thought when reading the book *Pro Git*
 6. git checkout `<branch_name>`
 
 
-##Git Commit Guidelines
+## Git Commit Guidelines
 
 1. You don't want to submmit any whitespace errors. Using the following command:
 
