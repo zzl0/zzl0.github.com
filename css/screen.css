@@ -155,7 +155,18 @@ ul.posts {
 
 }
 
-  /* standard */
+#post code {background:#eee; border-color:#eee;}
+#post pre {background:#222; padding:15px;}
+#post pre code {padding:0; background-color:inherit !important;color:#75715e;}
+#post pre code * {
+    font-weight:normal !important; background-color:inherit !important;
+    text-decoration:none !important;
+}
+.date, code, code * {font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;}
+#post pre {line-height:18px;}
+#post pre, table {margin:20px 0;}
+
+/*
 
   #post pre {
     border: 1px solid #ddd;
@@ -177,7 +188,7 @@ ul.posts {
 
     #post pre code {
       border: none;
-    }
+    } */
 
   /* terminal */
 
