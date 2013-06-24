@@ -3,10 +3,6 @@ layout: post
 title: Notes of Pro Git
 ---
 
-#{{ page.title }}
-
-<p class="meta">19 Jun 2013 - 长春</p>
-
 This post records my thought when reading the book *Pro Git*
 
 ## Usefull Commands
