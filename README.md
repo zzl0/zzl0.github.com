@@ -1,1 +1,1 @@
-This is [my blog](zzl0.github.io) project.
+This is [my blog](http://zzl0.github.io) project.
