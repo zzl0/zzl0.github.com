@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Notes of Pro Git
+tags: git
+comments: yes
+og_image_url: ""
+description: "Git is a great revision control and source code management system, this post records my thought when reading the book Pro Git."
 ---
 
 This post records my thought when reading the book *Pro Git*
@@ -50,5 +54,5 @@ This post records my thought when reading the book *Pro Git*
 	to see what a nicely formatted project-commit history looks like.
 
 
-		
-		
+
+

@@ -1,7 +1,10 @@
 ---
 layout: post
 title: Beansdb学习
-tags: [Beansdb, Nosql]
+tags: Beansdb, Nosql
+comments: yes
+og_image_url: ""
+description: "BeansDB 是一个主要针对大数据量、高可用性的分布式KeyValue存储系统，采用 HashTree 和简化的版本号来快速同步保证最终一致性（弱），一个简化版的 Dynamo。本记录初次使用 Beansdb 时的感受。"
 ---
 
 ## 使用

@@ -1,2 +1,12 @@
-markdown: rdiscount
+port: 3000
 pygments: true
+lsi: false
+permalink: pretty
+# paginate: 50
+markdown: redcarpet
+
+# Since GH pages override this to "true", we test this value to see if we are running locally
+safe: false
+
+encoding: utf-8
+exclude: ["Gemfile", "Gemfile.lock"]

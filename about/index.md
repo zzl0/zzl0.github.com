@@ -1,12 +1,14 @@
 ---
+layout: page
 title: About
-layout: post
 ---
 
-{{ page.title }}
-================
+My name is Zhaolong Zhu. I'm a Chinese software engineer living in Beijing with a passion for technology.
 
-朱兆龙, 程序员一枚.
-喜欢编程、冷笑话.
+## Elsewhere
 
-email: python -c 'print chr(64).join(("zhuzhaolong0","gmail.com"))'
+You can find me on a variety of world wild interweb sites.
+
+- [Weibo](http://weibo.com/funcjoy) — a good way to make contact
+- [GitHub](https://github.com/zzl0) — code, juicy code
+- [Douban](http://www.douban.com/people/zzljlu/) - book, movie, music
