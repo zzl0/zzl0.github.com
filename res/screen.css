@@ -325,6 +325,7 @@ a.post-excerpt {
     color:white;
     background:#444;
     text-decoration:none;
+    width: 100%;
   }
 
   a.post-excerpt div.title {
