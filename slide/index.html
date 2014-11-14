@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<style>
+
+@import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i);
+
+section {
+  background: #000;
+  color: #fff;
+  padding: 2em;
+  font-family: "PT Serif", Baskerville, Georgia;
+}
+
+#follow {
+  background: none;
+}
+.grey {
+  color: #777;
+}
+.normal-slide {
+  padding: 3em 12em;
+}
+.normal-slide .title {
+  font-size: 120%;
+  color: orange;
+}
+
+a:link,
+a:visited {
+  color: orange;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.chart {
+  display: block;
+  margin: auto;
+  margin-top: 60px;
+  font-size: 20px;
+}
+rect {
+  stroke: #eee;
+  fill: #77b300;
+  fill-opacity: .8;
+}
+rect.parent {
+  cursor: pointer;
+  fill: #4abde8;
+}
+text {
+  pointer-events: none;
+}
+
+#gist16121939 {
+  width: 800px;
+}
+
+</style>
+
+
+<section style="text-align:center;padding-top:8em;">
+  <p style="font-size:120%;"><b>Learn <i>Whisper</i> in 21 minutes</b></p>
+  <p class="grey"> zzl @ douban</p>
+</section>
+
+<section style="text-align:center;padding-top:1em;">
+  <p>Previously on <del style="color:red">Prison Break</del> <ins style="color:red">Graphite</ins></p>
+  <img style="height:16em;"src="img/graphite_cluster.png"/>
+</section>
+
+<section style="text-align:center;padding-top:1em;">
+  <p>Previously on <del style="color:red">Prison Break</del> <ins style="color:red">Graphite</ins></p>
+  <p style="position:fixed;text-indent:1.75em;padding-top:9.1em;color:orange">whisper is here &rarr;</p>
+  <img style="height:16em;"src="img/graphite_cluster.png"/>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Agenda</p>
+  <li>Whisper</li>
+  <li>Create</li>
+  <li>Write</li>
+  <li>Read</li>
+  <li>Target</li>
+  <li>Merge metric files</li>
+  <li>Decrease write operation</li>
+  <li>Question?</li>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Configuration</p>
+  <script src="https://gist.github.com/zzl0/46610b34fb5734b586f6.js"></script>
+</section>
+
+<section id="file-structure">
+  <p style="text-align:center;color:orange">Whisper file structure</p>
+</section>
+
+<section style="text-align:center;padding:2em 9em; color:orange">
+  <p>Create</p>
+  <script src="https://gist.github.com/zzl0/bfa4f6c8bea9630d0ede.js" style="width: 800px;"></script>
+</section>
+
+<section style="text-align:center;padding:2em 9em; color:orange">
+  <p>Write</p>
+  <img src="img/write.jpg" style="width: 800px;"></img>
+</section>
+
+<section style="text-align:center;padding:2em 9em; color:orange">
+  <p>Read</p>
+  <img src="img/read.jpg" style="width: 800px;"></img>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Target</p>
+  <li>指标数量 2 ~ 3 million</li>
+  <li>更新频率 0.2 ~ 1 req / (s * metric)</li>
+  <li>内存使用 < 20 G</li>
+  <li>磁盘写入次数 < 1000 次 / s</li>
+  <p> 20 * 60 * 1000 = 1,200,000 </p>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Merge metric files</p>
+  <script src="https://gist.github.com/zzl0/1bf596ef14d4ae8a0296.js"></script>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Merge metric files</p>
+  <script src="https://gist.github.com/zzl0/2b11f47101c5aa8a13a7.js"></script>
+</section>
+
+<section style="text-align:center;padding:2em 9em; color:orange">
+  <p>Decrease Write operation</p>
+  <img src="img/write.jpg" style="width: 800px;"></img>
+</section>
+
+<section style="text-align:center;padding-top:2.5em;font-size:300%;">
+  QA?
+</section>
+
+<script src="d3.v3.min.js"></script>
+<script src="stack.v1.min.js"></script>
+<script>
+
+var mystack = stack()
+    .on("activate", activate)
+    .on("deactivate", deactivate)
+
+var section = d3.selectAll("section")
+
+function activate () {
+}
+
+function deactivate () {
+}
+
+var w = 1120,
+    h = 500,
+    x = d3.scale.linear().range([0, w]),
+    y = d3.scale.linear().range([0, h]);
+
+var vis = d3.select("#file-structure").append("div")
+    .attr("class", "chart")
+    .style("width", w + "px")
+    .style("height", h + "px")
+  .append("svg:svg")
+    .attr("width", w)
+    .attr("height", h);
+
+var partition = d3.layout.partition()
+    .value(function(d) { return d.size; });
+
+d3.json("whisper.json", function(root) {
+  var g = vis.selectAll("g")
+      .data(partition.nodes(root))
+    .enter().append("svg:g")
+      .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; })
+      .on("click", click);
+
+  var kx = w / root.dx,
+      ky = h / 1;
+
+  g.append("svg:rect")
+      .attr("width", root.dy * kx)
+      .attr("height", function(d) { return d.dx * ky; })
+      .attr("class", function(d) { return d.children ? "parent" : "child"; });
+
+  g.append("svg:text")
+      .attr("transform", transform)
+      .attr("dy", ".35em")
+      .style("opacity", function(d) { return d.dx * ky > 12 ? 1 : 0; })
+      .text(function(d) { return d.name; })
+
+  d3.select(window)
+      .on("click", function() { click(root); })
+
+  function click(d) {
+    if (!d.children) return;
+
+    kx = (d.y ? w - 40 : w) / (1 - d.y);
+    ky = h / d.dx;
+    x.domain([d.y, 1]).range([d.y ? 40 : 0, w]);
+    y.domain([d.x, d.x + d.dx]);
+
+    var t = g.transition()
+        .duration(d3.event.altKey ? 7500 : 750)
+        .attr("transform", function(d) { return "translate(" + x(d.y) + "," + y(d.x) + ")"; });
+
+    t.select("rect")
+        .attr("width", d.dy * kx)
+        .attr("height", function(d) { return d.dx * ky; });
+
+    t.select("text")
+        .attr("transform", transform)
+        .style("opacity", function(d) { return d.dx * ky > 12 ? 1 : 0; });
+
+    d3.event.stopPropagation();
+  }
+
+  function transform(d) {
+    return "translate(8," + d.dx * ky / 2 + ")";
+  }
+});
+</script>

@@ -1,0 +1,66 @@
+{
+  "name": "whisper",
+  "children": [
+   {
+      "name": "header",
+      "children": [
+        {
+          "name": "...", "size": 45
+        },
+        {
+          "name": "ArchiveInfo2", "size": 45
+        },
+        {
+          "name": "ArchiveInfo1",
+          "children": [
+            {"name": "points", "size": 15},
+            {"name": "secondsPerPoint", "size": 15},
+            {"name": "offset", "size": 15}
+          ]
+        },
+        {
+          "name": "Metadata",
+          "children": [
+            {"name": "archiveCount", "size": 10},
+            {"name": "xFilesFactor", "size": 10},
+            {"name": "maxRetention", "size": 10},
+            {"name": "aggregationType", "size": 10}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "data",
+      "children": [
+        {
+          "name": "...", "size": 72
+        },
+        {
+          "name": "Archive2", "size": 72
+        },
+        {
+          "name": "Archive1",
+          "children": [
+            {
+              "name": "...", "size": 24
+            },
+            {
+              "name": "Point1-2",
+              "children": [
+                {"name": "value", "size": 12},
+                {"name": "timestamp", "size": 12}
+              ]
+            },
+            {
+              "name": "Point1-1",
+              "children": [
+                {"name": "value", "size": 12},
+                {"name": "timestamp", "size": 12}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
