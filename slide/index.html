@@ -25,10 +25,13 @@ section {
   font-size: 120%;
   color: orange;
 }
+.normal-slide .body {
+  font-size: 30px;
+}
 
 a:link,
 a:visited {
-  color: orange;
+  color: wheat;
   text-decoration: none;
 }
 a:hover {
@@ -58,6 +61,29 @@ text {
   width: 800px;
 }
 
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  width: 500px;
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  background-color: wheat;
+}
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 5px;
+}
+
+blockquote cite:before {
+content: "\2014 \2009";
+}
+
 </style>
 
 
@@ -83,10 +109,11 @@ text {
   <li>Create</li>
   <li>Write</li>
   <li>Read</li>
+  <li>Requirements</li>
   <li>Target</li>
-  <li>Merge metric files</li>
-  <li>Decrease write operation</li>
-  <li>Question?</li>
+  <li>Implement</li>
+  <li>Test</li>
+  <li>QA?</li>
 </section>
 
 <section class="normal-slide">
@@ -114,12 +141,47 @@ text {
 </section>
 
 <section class="normal-slide">
+  <p class="title">QA</p>
+  <div class="body">
+    <li>大家在使用 Graphite 的时候有哪些觉得奇怪的敌方？</li>
+  </div>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Requirements</p>
+  <blockquote>
+    <p>以下几个场景需要大量 metric 记录和查询：</p>
+    <li>记录每个 nurl 的响应时间</li>
+    <li>记录每个 normalized sql 的响应时间</li>
+    <li>记录每个 pidl key 的历史状态</li>
+    <p>目前的 graphite 系统在数十万 metrics 时写入 IO 已经成为瓶颈，一个 key
+     一个文件的设计在通配符查询时也会带来大量文件系统操作。不适合此场景。
+    </p>
+    <cite>from Trello</cite>
+  </blockquote>
+</section>>
+
+<section class="normal-slide">
   <p class="title">Target</p>
-  <li>指标数量 2 ~ 3 million</li>
-  <li>更新频率 0.2 ~ 1 req / (s * metric)</li>
-  <li>内存使用 < 20 G</li>
-  <li>磁盘写入次数 < 1000 次 / s</li>
-  <p> 20 * 60 * 1000 = 1,200,000 </p>
+  <div class="body">
+    <li>指标数量 2 ~ 3 million</li>
+    <li>更新频率 0.2 ~ 1 req / (s * metric)</li>
+    <li>内存使用 < 20 G</li>
+    <li>硬盘写入次数 < 1000 次 / s</li>
+  </div>
+</section>
+
+<section style="text-align:center;padding:2em 9em; color:orange">
+  <p>Back of the envelope</p>
+  <img src="img/back_evelope.jpg" style="width: 800px"></img>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Related work</p>
+  <div class="body">
+    <li><a href="http://opentsdb.net/">OpenTSDB</a>: Based on Hadoop and HBase</li>
+    <li><a href="http://influxdb.com/">InfluxDB</a>: Based on LevelDB</li>
+  </div>
 </section>
 
 <section class="normal-slide">
@@ -133,8 +195,32 @@ text {
 </section>
 
 <section style="text-align:center;padding:2em 9em; color:orange">
-  <p>Decrease Write operation</p>
+  <p>Decrease write operation</p>
   <img src="img/write.jpg" style="width: 800px;"></img>
+</section>
+
+<section class="normal-slide">
+  <p class="title">Decrease write operation</p>
+  <div class="body">
+    <li>Can xff > 1 ?</li>
+  </div>
+</section>
+
+
+
+<section style="text-align:center;padding:2em 9em; color:orange">
+  <p>Test</p>
+  <img src="img/whole.jpg" style="width: 800px"></img>
+</section>
+
+<section style="text-align:center;padding:2em 9em; color:orange">
+  <p>IO</p>
+  <img src="img/io.png" style="width: 800px"></img>
+</section>
+
+<section class="normal-slide">
+  <p class="title">CPU</p>
+  <script src="https://gist.github.com/zzl0/aaf76b2a2d1e8406c209.js"></script>
 </section>
 
 <section style="text-align:center;padding-top:2.5em;font-size:300%;">
