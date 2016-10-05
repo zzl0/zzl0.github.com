@@ -8,7 +8,7 @@ description: "本篇主要介绍了什么是 DPark，为什么用 DPark，以及
 date: 2014-10-13
 ---
 
-注: 本篇是 [DPark 漫谈系列](/2014/08/05/dpark/)的第一篇.
+注: 本篇是 [DPark 漫谈系列](/2014/08/05/dpark.html)的第一篇.
 
 ## 什么是 DPark
 
