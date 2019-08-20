@@ -1,4 +1,7 @@
 Gemfile.lock
 _site/
+.bundle/
+.vscode/
+vendor/
 *.swp
 *.pyc
