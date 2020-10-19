@@ -75,24 +75,7 @@
           <div class="yui-b">
             <div class="yui-gf">
               <div class="yui-u first">
-                <h2>Education</h2>
-              </div>
-              <div class="yui-u">
-                <h2><b>Jilin University</b>, M.Eng. in Computer Science</h2>
-                <h3>Supervisor: Prof. Dantong Ouyang, <i>Semantic Web Group</i></h3>
-                <h3>Research focus: <i>Information Extraction</i> and <i>NLP</i> algorithms</h3>
-                <h3>Awards: <i>Outstanding Graduates</i> and <i>Excellent Graduation Thesis</i></h3>
-                <h3>2010-2013</h3>
-              </div>
-              <div class="yui-u">
-                <h2><b>Jilin University</b>, B.Eng. in Computer Science</h2>
-                <h3>Awards: <i>Outstanding Graduates</i> and <i>Excellent Graduation Thesis</i></h3>
-                <h3>2006-2010</h3>
-              </div>
-            </div><!--// .yui-gf -->
-            <div class="yui-gf">
-              <div class="yui-u first">
-                <h2>Experience</h2>
+                <h2>Work</h2>
               </div><!--// .yui-u -->
               <div class="yui-u">
                 <div class="job">
@@ -100,10 +83,11 @@
                   <h3>Software Development Engineer</h3>
                   <h4>2017.07 &dash; present</h4>
                   <p>
-                    <li>Designed and implemented core features in Amazon transportation services which facilitate global selling and shipping.</li>
-                    <li>Designed and developed serveral Lambda based services.</li>
-                    <li>Key contributor to the data warehouse re-architecting, migrated data from Oracle to Redshift.</li>
-                    <li>Implemented <a href="https://github.com/dbcli/athenacli">AthenaCLI</a>: a CLI tool for AWS Athena service that can do auto-completion and syntax highlighting.</li>
+                    <li>Built an rule interpreter for shipping services, so we can easily change the rules data and share them between front-end and back-end.</li>
+                    <li>Key contributor to the conversion ingestion of Ads analytic platform, simplifying the work (10 weeks -> 2 weeks) to add a new conversion event type.</li>
+                    <li>Hepled migrate FBA Oracle database to AWS DynamoDB. The switch to managed service reduced database admin overhead by 70%.</li>
+                    <li>Mentored an intern completing a successful project (Deprecated an AWS Lambda based service by implementing the logic in Prod service) in his 3 months here.</li>
+                    <li>Implemented an <a href="https://github.com/dbcli/athenacli">AthenaCLI</a> tool, improving the user experience with AWS Athena.</li>
                   </p>
                 </div>
                 <div class="job">
@@ -120,10 +104,10 @@
                   <h3>System Engineer</h3>
                   <h4>2013.07 &dash; 2016.11</h4>
                   <p>
-                    <li>Designed and implemented a time series database: <a href="https://github.com/douban/Kenshin">Kenshin</a>, and shared it on QCon Beijing.</li>
-                    <li>Designed and implemented a distributed KV system: <a href="https://github.com/douban/gobeansdb">GoBeansDB</a> and <a href="https://github.com/douban/gobeansproxy">GoBeansProxy</a>.</li>
-                    <li>Key contribute to <a href="https://github.com/douban/dpark">DPark</a>, python clone of Spark, a MapReduce alike framework in Python.</li>
-                    <li>Designed and developed an ETL pipeline and a mobile app analytical platform.</li>
+                    <li>Implemented a time series database: <a href="https://github.com/douban/Kenshin">Kenshin</a> (also shared it in <a href="http://2016.qconbeijing.com/speakers/201968/">QCon Beijing 2016</a>), reduced the IOPS by 97.5%</li>
+                    <li>Implemented a distributed KV system: <a href="https://github.com/douban/gobeansdb">GoBeansDB</a> and <a href="https://github.com/douban/gobeansproxy">GoBeansProxy</a>, reduced the memory usage by 46% and maintaince overhead by 50%.</li>
+                    <li>Implemented an ETL pipeline and a mobile app analytical platform from scratch.</li>
+                    <li>Maintained our BigData processing framework <a href="https://github.com/douban/dpark">DPark</a> and cluster.</li>
                   </p>
                 </div>
                 <div class="job last">
@@ -136,13 +120,24 @@
                 </div>
               </div><!--// .yui-u -->
             </div><!--// .yui-gf -->
+            <div class="yui-gf last">
+              <div class="yui-u first">
+                <h2>Open Source</h2>
+              </div>
+              <div class="yui-u">
+                <div class="job last">
+                  <p>Designed and implemented an improved Distant Supervision algorithm for Relation Extraction, and this work is accepted by Journal of Internet Technology (SCI).</p>
+                  <p>AthenaCLI, Kenshin, Dpark, GoBeansDB, iodide</p>
+                </div>
+              </div>
+            </div><!--// .yui-gf-->
             <div class="yui-gf">
               <div class="yui-u first">
                 <h2>Technical</h2>
               </div>
               <div class="yui-u">
                 <ul class="talent">
-                  <li>Python/C/Go/Java/Scheme</li>
+                  <li>Python/C/Go/Java/Scala</li>
                   <li class="last">Big Data processing</li>
                 </ul>
                 <ul class="talent">
@@ -155,19 +150,23 @@
                 </ul>
               </div>
             </div><!--// .yui-gf-->
-            <div class="yui-gf last">
+            <div class="yui-gf">
               <div class="yui-u first">
-                <h2>Selected Papers</h2>
+                <h2>Education</h2>
               </div>
               <div class="yui-u">
-                <div class="job last">
-                  <h2> Distant Supervision for Relation Extraction with Type Constraint </h2>
-                  <h3>Jilin University</h3>
-                  <h4>2012</h4>
-                  <p>Designed and implemented an improved Distant Supervision algorithm for Relation Extraction, and this work is accepted by Journal of Internet Technology (SCI).</p>
-                </div>
+                <h2><b>Jilin University</b>, M.Eng. in Computer Science</h2>
+                <h3>Supervisor: Prof. Dantong Ouyang, <i>Semantic Web Group</i></h3>
+                <h3>Research focus: <i>Information Extraction</i> and <i>NLP</i> algorithms</h3>
+                <h3>Awards: <i>Outstanding Graduates</i> and <i>Excellent Graduation Thesis</i></h3>
+                <h3>2010-2013</h3>
               </div>
-            </div>
+              <div class="yui-u">
+                <h2><b>Jilin University</b>, B.Eng. in Computer Science</h2>
+                <h3>Awards: <i>Outstanding Graduates</i> and <i>Excellent Graduation Thesis</i></h3>
+                <h3>2006-2010</h3>
+              </div>
+            </div><!--// .yui-gf -->
           </div><!--// .yui-b -->
         </div><!--// yui-main -->
       </div><!--// bd -->
