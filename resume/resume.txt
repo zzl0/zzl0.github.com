@@ -37,8 +37,4 @@ Baidu, Beijing (2012.2 ‐ 2012.5) Software Engineer Intern
 ## Education
 
 * Jilin University, M.Eng. in Computer Science
-    * Supervisor: Prof. Dantong Ouyang, Semantic Web Group
-    * Research focus: Information Extraction and NLP algorithms
-    * Awards: Outstanding Graduates and Excellent Graduation Thesis
 * Jilin University, B.Eng. in Computer Science
-    * Awards: Outstanding Graduates and Excellent Graduation Thesis
