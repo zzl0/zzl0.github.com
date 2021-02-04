@@ -10,14 +10,16 @@
 * Led several Ads Attribution projects: building a new Conversion Ingestion system (Spark app), adding a new dimension in Attribution systems for Amazon Fresh program.
 * Led Transportation Options project to improve FBA seller's shipping experience.
 * Built a rule interpreter for shipping services, so we can easily change the rules data and share them between front-end and back-end.
+* Proposed and implemented an idea to optimize our DynamoDB design, which reduced the number of DDB tables from 6 to 1 and simplifed access patterns.
+* Built [AthenaCLI](https://github.com/dbcli/athenacli) to simplify the procedure of running Athena ad-hoc queries.
 * Hepled migrate FBA Oracle database to AWS DynamoDB. The switch to managed service reduced database admin overhead by 70%.
 
 *Douban*, Beijing (2013.07 - 2016.11) Core System Engineer
 
-* Implemented a time series database: [Kenshin](https://github.com/douban/Kenshin) (and also presented it in [QCon Beijing 2016](http://2016.qconbeijing.com/speakers/201968/)), which reduced the IOPS by 97.5% with a little increase in query latency.
-* Implemented a distributed KV system: [GoBeansDB](https://github.com/douban/gobeansdb) and GoBeansProxy, reduced the memory usage by 46% and maintaince overhead by 50%.
+* Designed and implemented a time series database: [Kenshin](https://github.com/douban/Kenshin) (and also presented it in [QCon Beijing 2016](http://2016.qconbeijing.com/speakers/201968/)), which reduced the IOPS by 97.5% with a little increase in query latency.
+* Core contributor to a distributed KV system: [GoBeansDB](https://github.com/douban/gobeansdb) and GoBeansProxy, reduced the memory usage by 46% and maintaince overhead by 50%.
+* Core contributor to a BigData processing framework [DPark](https://github.com/douban/dpark) and the computing cluster.
 * Implemented an ETL pipeline and a mobile app analytical platform from scratch.
-* Developed and maintained our BigData processing framework [DPark](https://github.com/douban/dpark) and the computing cluster.
 
 ## Open Source
 
